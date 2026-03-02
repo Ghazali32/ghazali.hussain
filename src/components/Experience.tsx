@@ -1,6 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+type ExperienceHighlight = string | React.ReactNode;
+
 const experiences = [
   {
     company: "HCLTech",
@@ -10,14 +12,14 @@ const experiences = [
     highlights: [
       "Contributing to an RAI (Responsible AI) Evaluator project for foundational and RAG models",
       "Built and optimized Computer Vision Image Segmentation models",
-    ],
+    ] as ExperienceHighlight[],
   },
   {
     company: "HCLTech",
     role: "Scholar",
     period: "Jun 2025 — Aug 2025",
     location: "Noida",
-    highlights: [],
+    highlights: [] as ExperienceHighlight[],
   },
   {
     company: "The Tech Ravens",
@@ -27,7 +29,7 @@ const experiences = [
     highlights: [
       "Built a healthcare app with React Native, Node.js on AWS EC2 with FCM notifications",
       "Automated media uploads to AWS S3 with Lambda for file conversion",
-    ],
+    ] as ExperienceHighlight[],
   },
   {
     company: "Basira Studio",
@@ -35,9 +37,18 @@ const experiences = [
     period: "Oct 2024 — Jul 2025",
     location: "New Delhi",
     highlights: [
-      "Developed web apps including zairawasim.com and an orphanage website",
+      <>
+        Developed web apps including{" "}
+        <a href="https://zairawasim.com" target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-foreground transition-colors">
+          zairawasim.com
+        </a>{" "}
+        and the orphanage web app{" "}
+        <a href="https://honor-orphan.vercel.app" target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-foreground transition-colors">
+          honor-orphan.vercel.app
+        </a>
+      </>,
       "Built full-stack blog admin panel and CRM system using MERN stack",
-    ],
+    ] as ExperienceHighlight[],
   },
 ];
 
@@ -93,7 +104,7 @@ const Experience = () => {
                 {exp.highlights.length > 0 && (
                   <ul className="space-y-1.5 mt-3">
                     {exp.highlights.map((h, j) => (
-                      <li key={j} className="text-xs text-muted-foreground font-light leading-relaxed flex gap-2">
+                      <li key={j} className="text-md text-muted-foreground font-light leading-relaxed flex gap-2">
                         <span className="mt-0.5 shrink-0">—</span>
                         {h}
                       </li>

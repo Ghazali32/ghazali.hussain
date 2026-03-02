@@ -35,12 +35,13 @@ const About = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="flex flex-col justify-center space-y-4"
           >
-            <p className="text-muted-foreground leading-relaxed font-light text-sm">
+            <p className="text-muted-foreground leading-relaxed font-light text-lg
+            ">
               I'm a Senior Software Engineer at HCLTech with a B.Tech in Computer Science
               from Jamia Hamdard University. I specialize in building robust, scalable
               applications using modern technologies.
             </p>
-            <p className="text-muted-foreground leading-relaxed font-light text-sm">
+            <p className="text-muted-foreground leading-relaxed font-light text-lg">
               From Responsible AI evaluation frameworks to Computer Vision models,
               healthcare apps to CRM systems — I thrive on solving complex problems
               and shipping impactful products.
